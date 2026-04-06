@@ -46,14 +46,20 @@ const labels = {
 
     <nav class="hidden items-center gap-5 text-sm md:flex">
       <a class="link-soft" href={`${base}/`}>{labels.home}</a>
-      <a class="link-soft" href="/la-casa">{labels.house}</a>
-      <a class="link-soft" href="/entorno">{labels.area}</a>
-      <a class="link-soft" href="/galeria">{labels.gallery}</a>
-      <a class="link-soft" href="/ubicacion">{labels.location}</a>
-      <a class="btn-primary px-4 py-2" href="/reservas">
+      <a class="link-soft" href={`${base}/la-casa`}>{labels.house}</a>
+      <a class="link-soft" href={`${base}/entorno`}>{labels.area}</a>
+      <a class="link-soft" href={`${base}/galeria`}>{labels.gallery}</a>
+      <a class="link-soft" href={`${base}/ubicacion`}>{labels.location}</a>
+      <a class="btn-primary px-4 py-2" href={`${base}/reservas`}>
         {labels.cta}
       </a>
     </nav>
+
+    <button id="menu-toggle" class="md:hidden p-2 text-[--color-text]" aria-label="Toggle menu">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
 
     <div class="flex items-center gap-2 text-xs font-medium">
       <a class={`rounded-md px-2 py-1 transition-colors ${lang === "es" ? "bg-[--color-brand-700] text-white" : "bg-[--color-surface-soft] text-[--color-text-muted] hover:bg-[--color-brand-100]"}`} href="/">ES</a>
@@ -61,4 +67,24 @@ const labels = {
       <a class={`rounded-md px-2 py-1 transition-colors ${lang === "fr" ? "bg-[--color-brand-700] text-white" : "bg-[--color-surface-soft] text-[--color-text-muted] hover:bg-[--color-brand-100]"}`} href="/fr">FR</a>
     </div>
   </div>
+
+  <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-white border-b border-[--color-border] shadow-lg md:hidden">
+    <div class="container-site py-4 flex flex-col gap-4">
+      <a class="link-soft text-[--color-text]" href={`${base}/`}>{labels.home}</a>
+      <a class="link-soft text-[--color-text]" href={`${base}/la-casa`}>{labels.house}</a>
+      <a class="link-soft text-[--color-text]" href={`${base}/entorno`}>{labels.area}</a>
+      <a class="link-soft text-[--color-text]" href={`${base}/galeria`}>{labels.gallery}</a>
+      <a class="link-soft text-[--color-text]" href={`${base}/ubicacion`}>{labels.location}</a>
+      <a class="btn-primary px-4 py-2 w-fit" href={`${base}/reservas`}>
+        {labels.cta}
+      </a>
+    </div>
+  </div>
 </header>
+
+<script client:load>
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+</script>
