@@ -1,0 +1,40 @@
+---
+import Navbar from "../components/site/Navbar.astro";
+import Footer from "../components/site/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  lang?: "es" | "en" | "fr";
+}
+
+const { title, description, lang = "es" } = Astro.props;
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="bg-stone-50 text-stone-800 antialiased">
+    <Navbar lang={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

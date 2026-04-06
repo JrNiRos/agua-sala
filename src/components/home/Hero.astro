@@ -1,0 +1,35 @@
+---
+interface Props {
+  badge: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  bookingUrl: string;
+}
+
+const { badge, title, subtitle, image, ctaPrimary, ctaSecondary, bookingUrl } = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden">
+  <img src={image} alt={title} class="h-[72vh] w-full object-cover" />
+  <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/20"></div>
+  <div class="absolute inset-0 flex items-end">
+    <div class="container-site pb-12 md:pb-20">
+      <div class="max-w-2xl text-white">
+        <p class="inline-block rounded-full bg-white/20 px-3 py-1 text-sm backdrop-blur">{badge}</p>
+        <h1 class="mt-4 font-serif text-4xl leading-tight sm:text-5xl md:text-6xl">{title}</h1>
+        <p class="mt-4 text-base text-white/90 sm:text-lg">{subtitle}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={bookingUrl} class="rounded-xl bg-amber-700 px-6 py-3 font-medium text-white transition hover:bg-amber-600">
+            {ctaPrimary}
+          </a>
+          <a href="/galeria" class="rounded-xl border border-white/70 px-6 py-3 font-medium text-white transition hover:bg-white/10">
+            {ctaSecondary}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

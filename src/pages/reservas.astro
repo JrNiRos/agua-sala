@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Reservas | Agua Sala Rural"
+  description="Consulta disponibilidad y reserva tu estancia en nuestra casa rural de Sevilla."
+>
+  <section class="container-site py-16 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wide text-emerald-800">Reservas</p>
+    <h1 class="mt-2 font-serif text-4xl text-stone-900 md:text-5xl">Consulta disponibilidad en minutos</h1>
+    <p class="mt-6 max-w-3xl text-stone-600">
+      Te respondemos rapido para ayudarte a cerrar tu escapada ideal. Puedes escribirnos por
+      WhatsApp o enviarnos una solicitud con los datos de tu estancia.
+    </p>
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-2">
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="font-semibold text-stone-900">Reserva por WhatsApp</h2>
+        <p class="mt-2 text-sm text-stone-600">
+          Opcion recomendada para una respuesta mas inmediata.
+        </p>
+        <a href="https://wa.me/34620880212" class="mt-5 inline-block rounded-xl bg-emerald-800 px-5 py-3 text-sm font-medium text-white hover:bg-emerald-700">
+          Abrir WhatsApp
+        </a>
+      </article>
+
+      <form
+        action="https://formspree.io/f/your-form-id"
+        method="POST"
+        class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200"
+      >
+        <h2 class="font-semibold text-stone-900">Formulario de consulta</h2>
+        <div class="mt-4 grid gap-4">
+          <input name="nombre" required placeholder="Nombre" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <input name="email" required type="email" placeholder="Email" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <input name="fechas" placeholder="Fechas aproximadas" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <textarea name="mensaje" rows="4" placeholder="Cuantos huespedes? Alguna peticion?" class="rounded-lg border border-stone-300 px-3 py-2 text-sm"></textarea>
+          <button type="submit" class="rounded-xl bg-amber-700 px-5 py-3 text-sm font-medium text-white hover:bg-amber-600">
+            Enviar consulta
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Layout>

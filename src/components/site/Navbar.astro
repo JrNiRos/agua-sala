@@ -1,0 +1,64 @@
+---
+interface Props {
+  lang?: "es" | "en" | "fr";
+}
+
+const { lang = "es" } = Astro.props;
+const isEs = lang === "es";
+const base = isEs ? "" : `/${lang}`;
+
+const labels = {
+  es: {
+    home: "Inicio",
+    house: "La casa",
+    area: "Entorno",
+    gallery: "Galeria",
+    location: "Ubicacion",
+    contact: "Reservas",
+    cta: "Consultar disponibilidad",
+  },
+  en: {
+    home: "Home",
+    house: "The House",
+    area: "Area",
+    gallery: "Gallery",
+    location: "Location",
+    contact: "Bookings",
+    cta: "Check availability",
+  },
+  fr: {
+    home: "Accueil",
+    house: "La Maison",
+    area: "Environs",
+    gallery: "Galerie",
+    location: "Localisation",
+    contact: "Reservations",
+    cta: "Verifier disponibilite",
+  },
+}[lang];
+---
+
+<header class="sticky top-0 z-40 border-b border-stone-200/60 bg-stone-50/95 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <a href={base || "/"} class="font-serif text-xl font-semibold tracking-tight text-emerald-900">
+      Agua Sala Rural
+    </a>
+
+    <nav class="hidden items-center gap-5 text-sm text-stone-700 md:flex">
+      <a class="hover:text-emerald-800" href={`${base}/`}>{labels.home}</a>
+      <a class="hover:text-emerald-800" href="/la-casa">{labels.house}</a>
+      <a class="hover:text-emerald-800" href="/entorno">{labels.area}</a>
+      <a class="hover:text-emerald-800" href="/galeria">{labels.gallery}</a>
+      <a class="hover:text-emerald-800" href="/ubicacion">{labels.location}</a>
+      <a class="rounded-xl bg-emerald-800 px-4 py-2 font-medium text-white hover:bg-emerald-700" href="/reservas">
+        {labels.cta}
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-2 text-xs font-medium">
+      <a class={`rounded-md px-2 py-1 ${lang === "es" ? "bg-stone-900 text-white" : "bg-stone-200 text-stone-700"}`} href="/">ES</a>
+      <a class={`rounded-md px-2 py-1 ${lang === "en" ? "bg-stone-900 text-white" : "bg-stone-200 text-stone-700"}`} href="/en">EN</a>
+      <a class={`rounded-md px-2 py-1 ${lang === "fr" ? "bg-stone-900 text-white" : "bg-stone-200 text-stone-700"}`} href="/fr">FR</a>
+    </div>
+  </div>
+</header>
