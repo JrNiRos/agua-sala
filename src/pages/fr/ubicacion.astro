@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  lang="fr"
+  title="Emplacement | Agua Sala"
+  description="Comment se rendre à notre maison rurale à Villanueva del Rio y Minas, Séville."
+>
+  <section class="section-pad">
+    <div class="container-site">
+      <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">Emplacement</p>
+      <h1 class="mt-2 font-serif text-4xl text-[--color-text] md:text-5xl">Villanueva del Rio y Minas, Séville</h1>
+      <p class="mt-6 max-w-3xl text-[--color-text-muted]">
+      Notre hébergement est dans une zone tranquille avec un accès facile pour des escapades de week-end ou des séjours longs. Idéal pour se déconnecter sans renoncer à la proximité de Séville.
+      </p>
+      <p class="mt-4 max-w-3xl rounded-xl bg-[--color-surface] p-4 text-sm text-[--color-text] ring-1 ring-[--color-border]">
+        Adresse exacte : <strong>Avda. Alcalde Victor Mora 9</strong>. Référence précédente :
+        <strong>Blas Infante 21</strong>.
+      </p>
+
+      <div class="mt-10 grid gap-8 lg:grid-cols-[1.05fr_1.45fr]">
+        <article class="card-soft p-6">
+          <h2 class="font-semibold text-[--color-text]">Distances orientatives</h2>
+          <ul class="mt-4 space-y-2 text-sm text-[--color-text-muted]">
+            <li>Séville capitale : env. 50-60 min</li>
+            <li>Site de Munigua : très proche en voiture</li>
+            <li>Environnement naturel et rive : accès facile</li>
+          </ul>
+
+          <h3 class="mt-6 font-semibold text-[--color-text]">Comment s'y rendre</h3>
+          <p class="mt-3 text-sm text-[--color-text-muted]">
+            Nous vous enverrons des indications exactes à la confirmation de la réservation. Si vous préférez, nous vous assistons via WhatsApp pour faciliter l'arrivée.
+          </p>
+          <a href="https://wa.me/34620880212" class="btn-primary mt-5">
+            Demander des indications
+          </a>
+        </article>
+
+        <article class="card-soft overflow-hidden p-2">
+          <div class="rounded-2xl bg-[--color-brand-50] p-3 text-sm text-[--color-text-muted]">
+            Carte orientative de la zone Agua Sala.
+          </div>
+          <iframe
+            title="Carte d'emplacement d'Agua Sala à Villanueva del Rio y Minas"
+            src="https://www.google.com/maps?q=Avda.%20Alcalde%20Victor%20Mora%209%2C%20Villanueva%20del%20Rio%20y%20Minas&output=embed"
+            class="mt-2 h-[420px] w-full rounded-2xl"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>

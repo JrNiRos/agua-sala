@@ -1,21 +1,62 @@
+---
+interface Props {
+  lang?: "es" | "en" | "fr";
+}
+
+const { lang = "es" } = Astro.props;
+
+const labels = {
+  es: {
+    description: "Casa rural en Villanueva del Rio y Minas (Sevilla). Hasta 7 huespedes.",
+    contact: "Contacto",
+    whatsapp: "WhatsApp: +34 620 88 02 12",
+    email: "Email: arogmez00@gmail.com",
+    address: "Direccion",
+    address1: "Avda. Alcalde Victor Mora 9",
+    address2: "Antes: Blas Infante 21",
+    address3: "Proxima a Munigua, ribera y naturaleza",
+  },
+  en: {
+    description: "Rural house in Villanueva del Rio y Minas (Seville). Up to 7 guests.",
+    contact: "Contact",
+    whatsapp: "WhatsApp: +34 620 88 02 12",
+    email: "Email: arogmez00@gmail.com",
+    address: "Address",
+    address1: "Avda. Alcalde Victor Mora 9",
+    address2: "Previously: Blas Infante 21",
+    address3: "Near Munigua, riverbank and nature",
+  },
+  fr: {
+    description: "Maison rurale à Villanueva del Rio y Minas (Séville). Jusqu'à 7 invités.",
+    contact: "Contact",
+    whatsapp: "WhatsApp: +34 620 88 02 12",
+    email: "Email: arogmez00@gmail.com",
+    address: "Adresse",
+    address1: "Avda. Alcalde Victor Mora 9",
+    address2: "Avant: Blas Infante 21",
+    address3: "Proche de Munigua, rive et nature",
+  },
+}[lang];
+---
+
 <footer class="border-t border-[--color-border] bg-[--color-surface-soft]">
   <div class="container-site grid gap-8 py-10 md:grid-cols-3">
     <div>
       <p class="font-serif text-xl text-[--color-brand-700]">Agua Sala</p>
       <p class="mt-2 text-sm text-[--color-text-muted]">
-        Casa rural en Villanueva del Rio y Minas (Sevilla). Hasta 7 huespedes.
+        {labels.description}
       </p>
     </div>
     <div>
-      <p class="text-sm font-semibold uppercase tracking-wide text-[--color-text]">Contacto</p>
-      <p class="mt-2 text-sm text-[--color-text-muted]">WhatsApp: +34 620 88 02 12</p>
-      <p class="text-sm text-[--color-text-muted]">Email: arogmez00@gmail.com</p>
+      <p class="text-sm font-semibold uppercase tracking-wide text-[--color-text]">{labels.contact}</p>
+      <p class="mt-2 text-sm text-[--color-text-muted]">{labels.whatsapp}</p>
+      <p class="text-sm text-[--color-text-muted]">{labels.email}</p>
     </div>
     <div>
-      <p class="text-sm font-semibold uppercase tracking-wide text-[--color-text]">Direccion</p>
-      <p class="mt-2 text-sm text-[--color-text-muted]">Avda. Alcalde Victor Mora 9</p>
-      <p class="text-sm text-[--color-text-muted]">Antes: Blas Infante 21</p>
-      <p class="text-sm text-[--color-text-muted]">Proxima a Munigua, ribera y naturaleza</p>
+      <p class="text-sm font-semibold uppercase tracking-wide text-[--color-text]">{labels.address}</p>
+      <p class="mt-2 text-sm text-[--color-text-muted]">{labels.address1}</p>
+      <p class="text-sm text-[--color-text-muted]">{labels.address2}</p>
+      <p class="text-sm text-[--color-text-muted]">{labels.address3}</p>
     </div>
   </div>
 </footer>

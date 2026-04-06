@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const images = [
+  { src: "/images/patio-2.png", alt: "Piscine et patio extérieur de la maison" },
+  { src: "/images/patio-1.png", alt: "Salle à manger extérieure sous les arbres" },
+  { src: "/images/patio-3.png", alt: "Coin extérieur pour se détendre" },
+  { src: "/images/salon-1.png", alt: "Salon et salle à manger principaux de la maison" },
+  { src: "/images/salon-2.png", alt: "Table à manger préparée pour le groupe" },
+  { src: "/images/salon-3.png", alt: "Zone de séjour à côté de la salle à manger" },
+  { src: "/images/cocina-1.png", alt: "Cuisine équipée de la maison" },
+  { src: "/images/habitacion-1.png", alt: "Chambre double spacieuse et lumineuse" },
+  { src: "/images/habitacion-2.png", alt: "Chambre avec deux lits simples" },
+  { src: "/images/habitacion-3.png", alt: "Chambre principale avec lit double" },
+  { src: "/images/bano-1.png", alt: "Salle de bain avec douche et mobilier" },
+  { src: "/images/bano-2.png", alt: "Salle de bain complète de la maison" },
+  { src: "/images/paisaje-1.png", alt: "Vues des environs et patrimoine de la zone" },
+];
+---
+
+<Layout lang="fr" title="Galerie | Agua Sala" description="Explorez notre maison rurale et ses environs à travers des images.">
+  <section class="container-site py-16 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">Galerie</p>
+    <h1 class="mt-2 font-serif text-4xl text-stone-900 md:text-5xl">Découvrez l'ambiance de votre prochaine escapade</h1>
+    <p class="mt-6 max-w-3xl text-stone-600">
+      Une sélection visuelle du style, des espaces et du paysage entourant Agua Sala.
+    </p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        images.map((image) => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="h-64 w-full rounded-2xl object-cover shadow-sm ring-1 ring-stone-200 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,106 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const services = [
+  { icon: "snow", label: "Climatisation" },
+  { icon: "flame", label: "Barbecue" },
+  { icon: "home", label: "Maison de vacances : 130 m2" },
+  { icon: "bolt", label: "Incl. frais de consommation" },
+  { icon: "shirt", label: "Lave-linge" },
+  { icon: "utensils", label: "Lave-vaisselle" },
+  { icon: "star", label: "Luxury Collection" },
+  { icon: "coffee", label: "Machine à café" },
+  { icon: "leaf", label: "Mobilier de jardin" },
+  { icon: "waves", label: "Piscine extérieure privée : 15 m2" },
+  { icon: "no-smoking", label: "Interdiction de fumer dans la maison" },
+  { icon: "shield", label: "Terrain clôturé" },
+  { icon: "check-circle", label: "Tout inclus" },
+  { icon: "wifi", label: "WiFi" },
+];
+---
+
+<Layout
+  lang="fr"
+  title="La maison | Agua Sala"
+  description="Découvrez les espaces, la capacité et les services de notre maison rurale pour jusqu'à 7 invités."
+>
+  <section class="container-site py-16 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">La maison</p>
+    <h1 class="mt-2 font-serif text-4xl text-stone-900 md:text-5xl">Confort rural avec style accueillant</h1>
+    <p class="mt-6 max-w-3xl text-stone-600">
+      Notre maison rurale est préparée pour accueillir jusqu'à 7 invités confortablement. Elle est idéale pour
+      les familles et groupes d'amis qui veulent se déconnecter, partager du temps de qualité et profiter
+      de l'environnement naturel de Villanueva del Rio y Minas.
+    </p>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="font-semibold text-stone-900">Capacité et distribution</h2>
+        <p class="mt-2 text-sm text-stone-600">Jusqu'à 7 personnes, avec des espaces communs pour vivre ensemble avec espace.</p>
+      </article>
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="font-semibold text-stone-900">Confort</h2>
+        <p class="mt-2 text-sm text-stone-600">Environnements chaleureux, repos paisible et équipement conçu pour des séjours réels.</p>
+      </article>
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="font-semibold text-stone-900">Expérience</h2>
+        <p class="mt-2 text-sm text-stone-600">Un lieu parfait pour des escapades, célébrations et tourisme de nature.</p>
+      </article>
+    </div>
+
+    <div class="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 md:p-8">
+      <h2 class="font-serif text-2xl text-stone-900 md:text-3xl">Chambres et distribution des lits</h2>
+      <p class="mt-3 text-sm text-stone-600">
+        La maison dispose de 3 chambres et d'une capacité totale pour 7 personnes.
+      </p>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <article class="rounded-xl bg-stone-50 p-4 ring-1 ring-stone-200">
+          <h3 class="font-semibold text-stone-900">Chambre 1</h3>
+          <p class="mt-2 text-sm text-stone-600">2 lits simples de 0,90 m.</p>
+        </article>
+        <article class="rounded-xl bg-stone-50 p-4 ring-1 ring-stone-200">
+          <h3 class="font-semibold text-stone-900">Chambre 2</h3>
+          <p class="mt-2 text-sm text-stone-600">1 lit simple de 0,90 m et 1 lit double de 1,35 m.</p>
+        </article>
+        <article class="rounded-xl bg-stone-50 p-4 ring-1 ring-stone-200">
+          <h3 class="font-semibold text-stone-900">Chambre 3</h3>
+          <p class="mt-2 text-sm text-stone-600">1 lit double de 1,50 m.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 md:p-8">
+      <h2 class="font-serif text-2xl text-stone-900 md:text-3xl">Services</h2>
+      <p class="mt-3 text-sm text-stone-600">
+        Tout le nécessaire pour un séjour confortable, pratique et détendu.
+      </p>
+
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          services.map((service) => (
+            <article class="flex items-center gap-3 rounded-xl bg-stone-50 p-4 ring-1 ring-stone-200">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[--color-brand-100]" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="h-5 w-5 text-[--color-brand-800]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  {service.icon === "snow" && <path d="M12 2v20M4.9 6l14.2 12M4.9 18L19.1 6M2 12h20" />}
+                  {service.icon === "flame" && <path d="M12 3c2 2 4 4.5 4 8a4 4 0 1 1-8 0c0-2.5 1.2-4.3 4-8Z" />}
+                  {service.icon === "home" && <path d="M3 10.5 12 3l9 7.5V21H3zM9 21v-6h6v6" />}
+                  {service.icon === "bolt" && <path d="M13 2 5 13h6l-1 9 9-12h-6z" />}
+                  {service.icon === "shirt" && <path d="M8 6 5 8v4h3v8h8v-8h3V8l-3-2-2 2H10z" />}
+                  {service.icon === "utensils" && <path d="M6 3v8M9 3v8M7.5 11v10M15 3c2 2 2 6 0 8v10M18 3v18" />}
+                  {service.icon === "star" && <path d="m12 3 2.7 5.5L21 9.4l-4.5 4.3 1 6.3L12 17l-5.5 3 1-6.3L3 9.4l6.3-.9z" />}
+                  {service.icon === "coffee" && <path d="M4 8h11v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8zm11 1h2a2 2 0 0 1 0 4h-2M6 3v2M10 3v2" />}
+                  {service.icon === "leaf" && <path d="M19 5c-6 0-11 5-11 11 6 0 11-5 11-11ZM5 19l6-6" />}
+                  {service.icon === "waves" && <path d="M3 9c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0M3 14c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0" />}
+                  {service.icon === "no-smoking" && <path d="M4 14h8M15 14h5M16 9a3 3 0 0 1 3 3M7 6l11 11" />}
+                  {service.icon === "shield" && <path d="M12 3 5 6v6c0 5 3.5 8.5 7 10 3.5-1.5 7-5 7-10V6z" />}
+                  {service.icon === "check-circle" && <path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0ZM8 12l2.5 2.5L16 9" />}
+                  {service.icon === "wifi" && <path d="M2 9a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0M12 19h.01" />}
+                </svg>
+              </span>
+              <p class="text-sm font-medium text-stone-800">{service.label}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

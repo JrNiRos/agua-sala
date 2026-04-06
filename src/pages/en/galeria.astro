@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const images = [
+  { src: "/images/patio-2.png", alt: "Pool and outdoor patio of the house" },
+  { src: "/images/patio-1.png", alt: "Outdoor dining under trees" },
+  { src: "/images/patio-3.png", alt: "Outdoor corner to relax" },
+  { src: "/images/salon-1.png", alt: "Main living and dining room of the house" },
+  { src: "/images/salon-2.png", alt: "Dining table prepared for group" },
+  { src: "/images/salon-3.png", alt: "Living area next to the dining room" },
+  { src: "/images/cocina-1.png", alt: "Equipped kitchen of the house" },
+  { src: "/images/habitacion-1.png", alt: "Spacious and bright double bedroom" },
+  { src: "/images/habitacion-2.png", alt: "Bedroom with two single beds" },
+  { src: "/images/habitacion-3.png", alt: "Main bedroom with double bed" },
+  { src: "/images/bano-1.png", alt: "Bathroom with shower and furniture" },
+  { src: "/images/bano-2.png", alt: "Complete bathroom of the house" },
+  { src: "/images/paisaje-1.png", alt: "Views of the surroundings and heritage of the area" },
+];
+---
+
+<Layout lang="en" title="Gallery | Agua Sala" description="Explore our rural house and its surroundings through images.">
+  <section class="container-site py-16 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">Gallery</p>
+    <h1 class="mt-2 font-serif text-4xl text-stone-900 md:text-5xl">Discover the atmosphere of your next getaway</h1>
+    <p class="mt-6 max-w-3xl text-stone-600">
+      A visual selection of the style, spaces and landscape surrounding Agua Sala.
+    </p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        images.map((image) => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="h-64 w-full rounded-2xl object-cover shadow-sm ring-1 ring-stone-200 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

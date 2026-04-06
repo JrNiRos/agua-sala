@@ -1,26 +1,99 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/home/Hero.astro";
+import Carousel from "../../components/Carousel.astro";
 ---
 
 <Layout
   lang="en"
-  title="Rural house near Seville | Agua Sala"
-  description="Charming rural house for up to 7 guests in Villanueva del Rio y Minas, Seville."
+  title="Rural house in Villanueva del Rio y Minas | Agua Sala"
+  description="Rural house for up to 7 guests in Seville. Views, nature, Munigua and charming getaways near the city."
 >
   <Hero
     badge="Rural house for up to 7 guests"
-    title="Your countryside stay near Seville"
-    subtitle="Enjoy views, nature and local experiences close to Munigua and beautiful river landscapes."
+    title="Your rural refuge in Villanueva del Rio y Minas"
+    subtitle="Disconnect among open views, nature and authentic experiences. Perfect for families, friends and international travelers."
     image="/images/patio-2.png"
     ctaPrimary="Check availability"
     ctaSecondary="View gallery"
     bookingUrl="/reservas"
   />
-  <section class="container-site py-16">
-    <h2 class="font-serif text-3xl text-stone-900">Warm, comfortable and authentic</h2>
-    <p class="mt-4 max-w-3xl text-stone-600">
-      This multilingual version is ready and can be expanded page by page. Contact us for your dates.
-    </p>
+
+  <section class="section-pad">
+    <div class="container-site">
+      <h2 class="font-serif text-3xl text-[--color-text] md:text-4xl text-center">Discover Agua Sala</h2>
+      <p class="mt-4 text-[--color-text-muted] text-center max-w-2xl mx-auto">
+        Explore the cozy spaces of our rural house, designed to offer comfort and tranquility in a unique natural environment.
+      </p>
+      <div class="mt-10 max-w-4xl mx-auto">
+        <Carousel
+          images={["salon-1.png", "habitacion-1.png", "cocina-1.png", "patio-1.png", "bano-1.png"]}
+          alt="Images of Agua Sala house"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-[--color-brand-50]">
+    <div class="container-site">
+      <h2 class="font-serif text-3xl text-[--color-text] md:text-4xl">Why choose Agua Sala</h2>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="card-soft p-6 transition-shadow hover:shadow-md">
+          <h3 class="font-semibold text-[--color-text]">Up to 7 guests</h3>
+          <p class="mt-2 text-sm text-[--color-text-muted]">Comfortable space for families and groups of friends.</p>
+        </article>
+        <article class="card-soft p-6 transition-shadow hover:shadow-md">
+          <h3 class="font-semibold text-[--color-text]">Views and calm</h3>
+          <p class="mt-2 text-sm text-[--color-text-muted]">Cozy atmosphere to disconnect from daily routine.</p>
+        </article>
+        <article class="card-soft p-6 transition-shadow hover:shadow-md">
+          <h3 class="font-semibold text-[--color-text]">Unique experiences</h3>
+          <p class="mt-2 text-sm text-[--color-text-muted]">Very close to Munigua, routes and natural spots.</p>
+        </article>
+        <article class="card-soft p-6 transition-shadow hover:shadow-md">
+          <h3 class="font-semibold text-[--color-text]">Near Seville</h3>
+          <p class="mt-2 text-sm text-[--color-text-muted]">Rural tranquility with easy access to the city.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-site grid items-center gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">Environment</p>
+        <h2 class="mt-2 font-serif text-3xl text-[--color-text] md:text-4xl">Nature, history and quality plans</h2>
+        <p class="mt-4 text-[--color-text-muted]">
+          Discover the Roman site of Munigua, stroll along the riverbank and enjoy landscapes that invite you to slow down. The location allows combining relaxation and cultural outings.
+        </p>
+        <a href="/en/entorno" class="btn-primary mt-6">
+          Explore environment
+        </a>
+      </div>
+      <img
+        src="/images/paisaje-1.png"
+        alt="Landscape and surroundings near the house"
+        class="h-[360px] w-full rounded-3xl object-cover shadow-sm ring-1 ring-[--color-border]"
+      />
+    </div>
+  </section>
+
+  <section class="pb-14 md:pb-20">
+    <div class="container-site">
+      <div class="rounded-3xl bg-[#5a91c1] p-8 text-white md:p-12">
+        <h2 class="font-serif text-3xl text-white md:text-4xl">The best dates book up fast</h2>
+        <p class="mt-3 max-w-2xl text-white">
+          Write to us and we'll help you organize an unforgettable stay in Villanueva del Rio y Minas.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/reservas" class="inline-flex items-center justify-center rounded-xl bg-[#fceedd] px-6 py-3 font-semibold text-[#2f3a33] transition-colors hover:bg-[#f2cfab] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80">
+            Book now
+          </a>
+          <a href="https://wa.me/34620880212" class="inline-flex items-center justify-center rounded-xl border border-white/40 px-6 py-3 font-semibold transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80">
+            Direct WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>

@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  lang="en"
+  title="Bookings | Agua Sala"
+  description="Check availability and book your stay in our rural house in Seville."
+>
+  <section class="container-site py-16 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">Bookings</p>
+    <h1 class="mt-2 font-serif text-4xl text-stone-900 md:text-5xl">Check availability in minutes</h1>
+    <p class="mt-6 max-w-3xl text-stone-600">
+      We respond quickly to help you book your ideal getaway. You can write to us via
+      WhatsApp or send us a request with your stay details.
+    </p>
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-2">
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="font-semibold text-stone-900">Book via WhatsApp</h2>
+        <p class="mt-2 text-sm text-stone-600">
+          Recommended option for a more immediate response.
+        </p>
+        <a href="https://wa.me/34620880212" class="btn-primary mt-5">
+          Open WhatsApp
+        </a>
+      </article>
+
+      <form
+        action="https://formspree.io/f/meepvrpo"
+        method="POST"
+        class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200"
+      >
+        <h2 class="font-semibold text-stone-900">Inquiry form</h2>
+        <div class="mt-4 grid gap-4">
+          <input name="nombre" required placeholder="Name" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <input name="email" required type="email" placeholder="Email" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <input name="fechas" placeholder="Approximate dates" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <textarea name="mensaje" rows="4" placeholder="How many guests? Any requests?" class="rounded-lg border border-stone-300 px-3 py-2 text-sm"></textarea>
+          <button type="submit" class="rounded-xl bg-amber-700 px-5 py-3 text-sm font-medium text-white hover:bg-amber-600">
+            Send inquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Layout>

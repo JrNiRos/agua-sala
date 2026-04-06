@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  lang="fr"
+  title="Réservations | Agua Sala"
+  description="Vérifiez la disponibilité et réservez votre séjour dans notre maison rurale à Séville."
+>
+  <section class="container-site py-16 md:py-24">
+    <p class="text-sm font-semibold uppercase tracking-wide text-[--color-brand-700]">Réservations</p>
+    <h1 class="mt-2 font-serif text-4xl text-stone-900 md:text-5xl">Vérifiez la disponibilité en minutes</h1>
+    <p class="mt-6 max-w-3xl text-stone-600">
+      Nous répondons rapidement pour vous aider à réserver votre escapade idéale. Vous pouvez nous écrire via
+      WhatsApp ou nous envoyer une demande avec les détails de votre séjour.
+    </p>
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-2">
+      <article class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200">
+        <h2 class="font-semibold text-stone-900">Réserver via WhatsApp</h2>
+        <p class="mt-2 text-sm text-stone-600">
+          Option recommandée pour une réponse plus immédiate.
+        </p>
+        <a href="https://wa.me/34620880212" class="btn-primary mt-5">
+          Ouvrir WhatsApp
+        </a>
+      </article>
+
+      <form
+        action="https://formspree.io/f/meepvrpo"
+        method="POST"
+        class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200"
+      >
+        <h2 class="font-semibold text-stone-900">Formulaire de demande</h2>
+        <div class="mt-4 grid gap-4">
+          <input name="nombre" required placeholder="Nom" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <input name="email" required type="email" placeholder="Email" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <input name="fechas" placeholder="Dates approximatives" class="rounded-lg border border-stone-300 px-3 py-2 text-sm" />
+          <textarea name="mensaje" rows="4" placeholder="Combien d'invités ? Des demandes ?" class="rounded-lg border border-stone-300 px-3 py-2 text-sm"></textarea>
+          <button type="submit" class="rounded-xl bg-amber-700 px-5 py-3 text-sm font-medium text-white hover:bg-amber-600">
+            Envoyer demande
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Layout>
