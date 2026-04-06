@@ -1,0 +1,118 @@
+---
+// Componente de carrusel simple para imágenes
+interface Props {
+  images: string[];
+  alt: string;
+}
+
+const { images, alt } = Astro.props;
+---
+
+<div class="carousel-container relative overflow-hidden rounded-2xl shadow-sm" style="background-color: var(--color-surface); box-shadow: 0 0 0 1px var(--color-border);">
+  <div class="carousel-wrapper flex transition-transform duration-500 ease-in-out" id="carousel-wrapper">
+    {images.map((image, index) => (
+      <img
+        src={`/images/${image}`}
+        alt={`${alt} - Imagen ${index + 1}`}
+        class="carousel-slide flex-shrink-0 w-full h-64 md:h-80 object-cover"
+      />
+    ))}
+  </div>
+  <button
+    class="carousel-btn carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors"
+    id="prev-btn"
+  >
+    <svg class="w-5 h-5 text-[--color-text]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+  <button
+    class="carousel-btn carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-colors"
+    id="next-btn"
+  >
+    <svg class="w-5 h-5 text-[--color-text]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+  <div class="carousel-indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2" id="indicators">
+    {images.map((_, index) => (
+      <button
+        class="indicator w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"
+        data-slide={index}
+      ></button>
+    ))}
+  </div>
+</div>
+
+<script>
+  class Carousel {
+    constructor(container) {
+      this.container = container;
+      this.wrapper = container.querySelector('#carousel-wrapper');
+      this.slides = container.querySelectorAll('.carousel-slide');
+      this.prevBtn = container.querySelector('#prev-btn');
+      this.nextBtn = container.querySelector('#next-btn');
+      this.indicators = container.querySelectorAll('.indicator');
+      this.currentIndex = 0;
+      this.totalSlides = this.slides.length;
+
+      this.init();
+    }
+
+    init() {
+      this.updateIndicators();
+      this.prevBtn.addEventListener('click', () => this.prev());
+      this.nextBtn.addEventListener('click', () => this.next());
+      this.indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => this.goToSlide(index));
+      });
+
+      // Auto-play opcional
+      setInterval(() => this.next(), 5000);
+    }
+
+    updateIndicators() {
+      this.indicators.forEach((indicator, index) => {
+        if (index === this.currentIndex) {
+          indicator.classList.add('bg-white');
+          indicator.classList.remove('bg-white/50');
+        } else {
+          indicator.classList.add('bg-white/50');
+          indicator.classList.remove('bg-white');
+        }
+      });
+    }
+
+    goToSlide(index) {
+      this.currentIndex = index;
+      this.wrapper.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+      this.updateIndicators();
+    }
+
+    next() {
+      this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+      this.goToSlide(this.currentIndex);
+    }
+
+    prev() {
+      this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+      this.goToSlide(this.currentIndex);
+    }
+  }
+
+  // Inicializar carrusel cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+    carousels.forEach(container => new Carousel(container));
+  });
+</script>
+
+<style>
+  .carousel-wrapper {
+    width: calc(100% * var(--total-slides, 1));
+  }
+
+  .carousel-slide {
+    width: 100%;
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/home/Hero.astro";
+import Carousel from "../components/Carousel.astro";
 ---
 
 <Layout
@@ -16,6 +17,21 @@ import Hero from "../components/home/Hero.astro";
     ctaSecondary="Ver galeria"
     bookingUrl="/reservas"
   />
+
+  <section class="section-pad">
+    <div class="container-site">
+      <h2 class="font-serif text-3xl text-[--color-text] md:text-4xl text-center">Descubre Agua Sala</h2>
+      <p class="mt-4 text-[--color-text-muted] text-center max-w-2xl mx-auto">
+        Explora los espacios acogedores de nuestra casa rural, diseñados para ofrecer comodidad y tranquilidad en un entorno natural único.
+      </p>
+      <div class="mt-10 max-w-4xl mx-auto">
+        <Carousel
+          images={["salon-1.png", "habitacion-1.png", "cocina-1.png", "patio-1.png", "bano-1.png"]}
+          alt="Imágenes de la casa Agua Sala"
+        />
+      </div>
+    </div>
+  </section>
 
   <section class="section-pad bg-[--color-brand-50]">
     <div class="container-site">
