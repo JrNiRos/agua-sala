@@ -38,27 +38,27 @@ const labels = {
 }[lang];
 ---
 
-<header class="sticky top-0 z-40 border-b border-stone-200/60 bg-stone-50/95 backdrop-blur">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-    <a href={base || "/"} class="font-serif text-xl font-semibold tracking-tight text-emerald-900">
-      Agua Sala Rural
+<header class="sticky top-0 z-40 border-b border-[--color-border] bg-[--color-bg]/90 backdrop-blur">
+  <div class="container-site flex items-center justify-between py-3">
+    <a href={base || "/"} class="font-serif text-xl font-semibold tracking-tight text-[--color-brand-700]">
+      Agua Sala
     </a>
 
-    <nav class="hidden items-center gap-5 text-sm text-stone-700 md:flex">
-      <a class="hover:text-emerald-800" href={`${base}/`}>{labels.home}</a>
-      <a class="hover:text-emerald-800" href="/la-casa">{labels.house}</a>
-      <a class="hover:text-emerald-800" href="/entorno">{labels.area}</a>
-      <a class="hover:text-emerald-800" href="/galeria">{labels.gallery}</a>
-      <a class="hover:text-emerald-800" href="/ubicacion">{labels.location}</a>
-      <a class="rounded-xl bg-emerald-800 px-4 py-2 font-medium text-white hover:bg-emerald-700" href="/reservas">
+    <nav class="hidden items-center gap-5 text-sm md:flex">
+      <a class="link-soft" href={`${base}/`}>{labels.home}</a>
+      <a class="link-soft" href="/la-casa">{labels.house}</a>
+      <a class="link-soft" href="/entorno">{labels.area}</a>
+      <a class="link-soft" href="/galeria">{labels.gallery}</a>
+      <a class="link-soft" href="/ubicacion">{labels.location}</a>
+      <a class="btn-primary px-4 py-2" href="/reservas">
         {labels.cta}
       </a>
     </nav>
 
     <div class="flex items-center gap-2 text-xs font-medium">
-      <a class={`rounded-md px-2 py-1 ${lang === "es" ? "bg-stone-900 text-white" : "bg-stone-200 text-stone-700"}`} href="/">ES</a>
-      <a class={`rounded-md px-2 py-1 ${lang === "en" ? "bg-stone-900 text-white" : "bg-stone-200 text-stone-700"}`} href="/en">EN</a>
-      <a class={`rounded-md px-2 py-1 ${lang === "fr" ? "bg-stone-900 text-white" : "bg-stone-200 text-stone-700"}`} href="/fr">FR</a>
+      <a class={`rounded-md px-2 py-1 transition-colors ${lang === "es" ? "bg-[--color-brand-700] text-white" : "bg-[--color-surface-soft] text-[--color-text-muted] hover:bg-[--color-brand-100]"}`} href="/">ES</a>
+      <a class={`rounded-md px-2 py-1 transition-colors ${lang === "en" ? "bg-[--color-brand-700] text-white" : "bg-[--color-surface-soft] text-[--color-text-muted] hover:bg-[--color-brand-100]"}`} href="/en">EN</a>
+      <a class={`rounded-md px-2 py-1 transition-colors ${lang === "fr" ? "bg-[--color-brand-700] text-white" : "bg-[--color-surface-soft] text-[--color-text-muted] hover:bg-[--color-brand-100]"}`} href="/fr">FR</a>
     </div>
   </div>
 </header>

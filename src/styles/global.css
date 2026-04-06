@@ -4,6 +4,26 @@
 @theme {
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
+
+  /* Pastel design tokens */
+  --color-brand-50: #f2f8fd;
+  --color-brand-100: #e3f0fb;
+  --color-brand-300: #b7d8f3;
+  --color-brand-500: #6fa9d6;
+  --color-brand-700: #3f78a8;
+  --color-brand-800: #2d5e86;
+
+  --color-accent-100: #fceedd;
+  --color-accent-300: #f2cfab;
+  --color-accent-500: #d8a97f;
+
+  --color-bg: #fcfaf7;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f7f4ef;
+
+  --color-text: #2f3a33;
+  --color-text-muted: #66746a;
+  --color-border: #e7e3dc;
 }
 
 @layer base {
@@ -15,5 +35,45 @@
 @layer components {
   .container-site {
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-14 md:py-20;
+  }
+
+  .card-soft {
+    @apply rounded-2xl shadow-sm;
+    background-color: var(--color-surface);
+    box-shadow: 0 0 0 1px var(--color-border);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-white transition-colors active:brightness-95 focus-visible:outline-none focus-visible:ring-2;
+    background-color: var(--color-brand-700);
+    --tw-ring-color: var(--color-brand-300);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-brand-800);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition-colors active:brightness-95 focus-visible:outline-none focus-visible:ring-2;
+    color: var(--color-text);
+    background-color: var(--color-accent-100);
+    --tw-ring-color: var(--color-accent-300);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-accent-300);
+  }
+
+  .link-soft {
+    @apply transition-colors;
+    color: var(--color-text-muted);
+  }
+
+  .link-soft:hover {
+    color: var(--color-brand-800);
   }
 }
