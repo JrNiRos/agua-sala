@@ -1,7 +1,9 @@
+@import url("https://fonts.cdnfonts.com/css/pony-club");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
+  --font-logo: "Pony Club", "Playfair Display", serif;
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
 
@@ -30,6 +32,10 @@
   body {
     font-family: var(--font-sans);
   }
+}
+
+.logo-font {
+  font-family: var(--font-logo) !important;
 }
 
 @layer components {
