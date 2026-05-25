@@ -4,15 +4,17 @@ import Layout from "../../layouts/Layout.astro";
 const services = [
   { icon: "snow", label: "Air conditioning" },
   { icon: "flame", label: "Barbecue" },
-  { icon: "home", label: "Vacation home: 130 m2" },
+  { icon: "home", label: "Vacation home: 340 m2" },
   { icon: "bolt", label: "Incl. utility costs" },
   { icon: "shirt", label: "Washing machine" },
   { icon: "utensils", label: "Dishwasher" },
   { icon: "star", label: "Luxury Collection" },
   { icon: "coffee", label: "Coffee machine" },
   { icon: "leaf", label: "Garden furniture" },
-  { icon: "waves", label: "Private outdoor pool: 15 m2" },
+  { icon: "waves", label: "Private outdoor pool: 18 m2" },
   { icon: "no-smoking", label: "No smoking in the house" },
+  { icon: "ban", label: "No parties" },
+  { icon: "paw", label: "No pets" },
   { icon: "shield", label: "Enclosed property" },
   { icon: "check-circle", label: "All included" },
   { icon: "wifi", label: "WiFi" },
@@ -91,6 +93,8 @@ const services = [
                   {service.icon === "leaf" && <path d="M19 5c-6 0-11 5-11 11 6 0 11-5 11-11ZM5 19l6-6" />}
                   {service.icon === "waves" && <path d="M3 9c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0M3 14c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0" />}
                   {service.icon === "no-smoking" && <path d="M4 14h8M15 14h5M16 9a3 3 0 0 1 3 3M7 6l11 11" />}
+                  {service.icon === "ban" && <path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0m1.5 6.5L18.5 5.5" />}
+                  {service.icon === "paw" && <path d="M7 10c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3zm8 0c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3zm-4 5c-2.5 0-5 2-5 4.5V22h10v-2.5c0-2.5-2.5-4.5-5-4.5z" />}
                   {service.icon === "shield" && <path d="M12 3 5 6v6c0 5 3.5 8.5 7 10 3.5-1.5 7-5 7-10V6z" />}
                   {service.icon === "check-circle" && <path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0ZM8 12l2.5 2.5L16 9" />}
                   {service.icon === "wifi" && <path d="M2 9a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0M12 19h.01" />}
