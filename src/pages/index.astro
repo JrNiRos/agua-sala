@@ -20,10 +20,43 @@ import Carousel from "../components/Carousel.astro";
 
   <section class="section-pad">
     <div class="container-site">
+      <div class="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4 18a6 6 0 0 1 16 0" />
+          </svg>
+          Hasta 7 huéspedes
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 13h16v5H4z" />
+            <path d="M8 13V8h8v5" />
+          </svg>
+          3 dormitorios
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12h16" />
+            <path d="M6 12V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" />
+            <path d="M7 12v5M17 12v5" />
+          </svg>
+          2 baños
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 11.5c0-1.5 1.5-3 3-3s3 1.5 3 3-1.5 3-3 3-3-1.5-3-3ZM5 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM15 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM19 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+          </svg>
+          0 mascotas
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="7" />
+            <path d="M7 7l10 10" />
+          </svg>
+          No celebraciones
+        </div>
+      </div>
       <h2 class="font-serif text-3xl text-[--color-text] md:text-4xl text-center">Descubre El agua salá</h2>
-      <p class="mt-4 text-[--color-text-muted] text-center max-w-2xl mx-auto">
-        Explora los espacios acogedores de nuestra casa rural, diseñados para ofrecer comodidad y tranquilidad en un entorno natural único.
-      </p>
       <div class="mt-10 max-w-4xl mx-auto">
         <Carousel
           images={["salon-1.png", "habitacion-1.png", "cocina-1.png", "patio-1.png", "bano-1.png"]}
