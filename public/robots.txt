@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.elaguasala.com/sitemap.xml
+
+# Disallow crawling of search params if any
+Disallow: /*?*

@@ -13,6 +13,26 @@ const { title, description, lang = "es" } = Astro.props;
 const canonical = Astro.site
   ? new URL(Astro.url.pathname, Astro.site).toString()
   : Astro.url.pathname;
+
+const siteUrl = "https://www.elaguasala.com";
+
+const ld = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  name: "El agua salá",
+  description,
+  url: siteUrl,
+  telephone: "+34620880212",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Villanueva del Río y Minas",
+    addressRegion: "Sevilla",
+    addressCountry: "ES"
+  },
+  image: [siteUrl + "/images/patio-2.png", siteUrl + "/images/paisaje-1.png"],
+  priceRange: "€€",
+  currenciesAccepted: "EUR"
+};
 ---
 
 <!doctype html>
@@ -29,6 +49,15 @@ const canonical = Astro.site
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={siteUrl + "/images/patio-2.png"} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : lang === 'fr' ? 'fr_FR' : 'en_GB'} />
+
+    <link rel="alternate" hreflang="es" href="https://www.elaguasala.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.elaguasala.com/en/" />
+    <link rel="alternate" hreflang="fr" href="https://www.elaguasala.com/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.elaguasala.com/" />
+
+    <script type="application/ld+json">{JSON.stringify(ld)}</script>
   </head>
   <body class="bg-[--color-bg] text-[--color-text] antialiased">
     <Navbar lang={lang} />
