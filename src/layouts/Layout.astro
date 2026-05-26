@@ -52,6 +52,15 @@ const ld = {
     <meta property="og:image" content={siteUrl + "/images/patio-2.png"} />
     <meta property="og:locale" content={lang === 'es' ? 'es_ES' : lang === 'fr' ? 'fr_FR' : 'en_GB'} />
 
+    <!-- Google Analytics 4: reemplaza G-XXXXXXXXXX por tu ID real -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { page_path: window.location.pathname });
+    </script>
+
     <link rel="alternate" hreflang="es" href="https://www.elaguasala.com/" />
     <link rel="alternate" hreflang="en" href="https://www.elaguasala.com/en/" />
     <link rel="alternate" hreflang="fr" href="https://www.elaguasala.com/fr/" />
