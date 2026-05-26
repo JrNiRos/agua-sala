@@ -21,6 +21,42 @@ import Carousel from "../../components/Carousel.astro";
 
   <section class="section-pad">
     <div class="container-site">
+      <div class="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4 18a6 6 0 0 1 16 0" />
+          </svg>
+          Up to 7 guests
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 13h16v5H4z" />
+            <path d="M8 13V8h8v5" />
+          </svg>
+          3 bedrooms
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12h16" />
+            <path d="M6 12V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" />
+            <path d="M7 12v5M17 12v5" />
+          </svg>
+          2 bathrooms
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 11.5c0-1.5 1.5-3 3-3s3 1.5 3 3-1.5 3-3 3-3-1.5-3-3ZM5 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM15 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM19 13.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+          </svg>
+          0 pets
+        </div>
+        <div class="rounded-3xl bg-[--color-bg] px-4 py-3 text-sm font-semibold text-[--color-text] shadow-sm ring-1 ring-[--color-border] flex items-center gap-3">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="7" />
+            <path d="M7 7l10 10" />
+          </svg>
+          No celebrations
+        </div>
+      </div>
       <h2 class="font-serif text-3xl text-[--color-text] md:text-4xl text-center">Discover El agua salá</h2>
       <p class="mt-4 text-[--color-text-muted] text-center max-w-2xl mx-auto">
         Explore the cozy spaces of our rural house, designed to offer comfort and tranquility in a unique natural environment.
@@ -31,6 +67,58 @@ import Carousel from "../../components/Carousel.astro";
           alt="Images of El agua salá house"
         />
       </div>
+      <div class="mt-8 max-w-4xl mx-auto space-y-6 text-[--color-text-muted] text-base leading-relaxed">
+        <p>
+          El agua salá is much more than a vacation home; it is a corner of calm designed for those who seek to disconnect without giving up comfort.
+          The house, furnished with style, impresses with its elegant combination of modern comfort and traditional charm.
+        </p>
+        <div id="moreContent" class="hidden mt-6 space-y-6 text-[--color-text-muted] text-base leading-relaxed">
+          <p>
+            Spacious and bright interiors, a cozy living room with a wood-burning fireplace inviting evenings of reading or endless conversations, welcoming bedrooms equipped with air conditioning,
+            a well-equipped kitchen for your culinary creations, ideal for your relaxing vacation.
+          </p>
+          <p>
+            The heart of the stay is our large outdoor terrace with fruit trees, where you can enjoy a private salt chlorinated pool and crystal clear waters while taking in the iconic views that immerse you in the Andalusian countryside.
+            Relax under the shade of our lemon and orange trees, or enjoy an unforgettable dinner in our outdoor dining area.
+          </p>
+          <p>
+            The pool invites you to take a refreshing dip, while the tranquil location promises pure relaxation.
+          </p>
+          <p>
+            There is much to discover around Villanueva del Río y Minas. Explore the region's rich history, the Roman past with the archaeological site of Munigua,
+            and the legacy of the Industrial Revolution with the Minas de la Reunión Historic Complex.
+          </p>
+          <p>
+            Enjoy nature in the nearby Sierra Norte Natural Park and in the beautiful landscapes of the surroundings.
+            Take advantage of the proximity to Seville with its magnificent monuments and cultural offerings, and Córdoba with its Mosque. Ideal for day trips.
+          </p>
+          <p>
+            This vacation home is perfect for unforgettable experiences and relaxation.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <button id="readMoreBtn" type="button" class="inline-flex items-center gap-2 text-[--color-brand-700] font-semibold transition-colors hover:text-[--color-brand-800]">
+            <span>Read more</span>
+            <span id="readMoreArrow" class="inline-block transition-transform duration-200">▼</span>
+          </button>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const btn = document.getElementById('readMoreBtn');
+          const content = document.getElementById('moreContent');
+          const arrow = document.getElementById('readMoreArrow');
+          if (!btn || !content || !arrow) return;
+
+          btn.addEventListener('click', () => {
+            const expand = content.classList.contains('hidden');
+            content.classList.toggle('hidden', !expand);
+            const label = btn.querySelector('span');
+            if (label) label.textContent = expand ? 'Show less' : 'Read more';
+            arrow.style.transform = expand ? 'rotate(180deg)' : 'rotate(0deg)';
+          });
+        });
+      </script>
     </div>
   </section>
 

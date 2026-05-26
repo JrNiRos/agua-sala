@@ -82,4 +82,12 @@
   .link-soft:hover {
     color: var(--color-brand-800);
   }
+
+  .custom-details-arrow {
+    transform: rotate(0deg);
+  }
+
+  details[open] .custom-details-arrow {
+    transform: rotate(180deg);
+  }
 }

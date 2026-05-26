@@ -63,6 +63,58 @@ import Carousel from "../components/Carousel.astro";
           alt="ImÃ¡genes de la casa El agua salá"
         />
       </div>
+      <div class="mt-8 max-w-4xl mx-auto space-y-6 text-[--color-text-muted] text-base leading-relaxed">
+        <p>
+          El agua salá, es mucho más que una casa de vacaciones; es un rincón de calma diseñado para quienes buscan desconectar sin renunciar al confort.
+          La casa, amueblada con estilo, impresiona por su elegante combinación de confort moderno y encanto tradicional.
+        </p>
+        <div id="moreContent" class="hidden mt-6 space-y-6 text-[--color-text-muted] text-base leading-relaxed">
+          <p>
+            Amplios y luminosos interiores, salón acogedor con chimenea de leña que invita a noches de lectura o a charlas interminables, acogedores dormitorios dotados de aire acondicionado,
+            una cocina bien equipada para sus creaciones culinarias, ideal para sus relajantes vacaciones.
+          </p>
+          <p>
+            El corazón de la estancia es nuestra gran terraza exterior con árboles frutales, donde podrás disfrutar de una piscina privada de cloración salina y aguas cristalinas mientras contemplas las icónicas vistas que te integran en el campo andaluz.
+            Relájate bajo la sombra de nuestros limoneros y naranjos, o disfruta de una cena inolvidable en nuestra zona de comedor al aire libre.
+          </p>
+          <p>
+            La piscina le invita a darse un refrescante chapuzón, mientras que la tranquila ubicación promete pura relajación.
+          </p>
+          <p>
+            Hay mucho que descubrir en los alrededores de Villanueva del Río y Minas. Explore la rica historia de la región, el pasado romano con el enclave arqueológico de Munigua,
+            y la huella de la Revolución Industrial con el Conjunto Histórico Minas de la Reunión.
+          </p>
+          <p>
+            Disfrute de la naturaleza en el cercano Parque Natural de la Sierra Norte y en los bellísimos parajes del entorno.
+            Aprovecha la cercanía de Sevilla con sus magníficos monumentos y su oferta cultural, y de Córdoba con su Mezquita. Ideales para excursiones de un día.
+          </p>
+          <p>
+            Esta casa de vacaciones es perfecta para vivir experiencias inolvidables y relajarse.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <button id="readMoreBtn" type="button" class="inline-flex items-center gap-2 text-[--color-brand-700] font-semibold transition-colors hover:text-[--color-brand-800]">
+            <span>Saber más</span>
+            <span id="readMoreArrow" class="inline-block transition-transform duration-200">▼</span>
+          </button>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const btn = document.getElementById('readMoreBtn');
+          const content = document.getElementById('moreContent');
+          const arrow = document.getElementById('readMoreArrow');
+          if (!btn || !content || !arrow) return;
+
+          btn.addEventListener('click', () => {
+            const expand = content.classList.contains('hidden');
+            content.classList.toggle('hidden', !expand);
+            const label = btn.querySelector('span');
+            if (label) label.textContent = expand ? 'Mostrar menos' : 'Saber más';
+            arrow.style.transform = expand ? 'rotate(180deg)' : 'rotate(0deg)';
+          });
+        });
+      </script>
     </div>
   </section>
 
